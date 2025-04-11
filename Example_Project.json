@@ -1,0 +1,161 @@
+{
+    "nodes": [
+      { 
+        "id": "source", 
+        "type": "source", 
+        "object_id": "obj-0001-source",
+        "icon": "icons/source.svg",
+        "position": { "x": 100, "y": 300 },
+        "scale": { "x": 1.0, "y": 1.0 }
+      },
+      { 
+        "id": "dist1", 
+        "type": "distribution_point", 
+        "object_id": "obj-0002-dist",
+        "icon": "icons/distribution.svg",
+        "position": { "x": 300, "y": 300 },
+        "scale": { "x": 2.0, "y": 1.0 }
+      },
+      { 
+        "id": "load1", 
+        "type": "load", 
+        "object_id": "obj-0003-load1",
+        "icon": "icons/load.svg",
+        "position": { "x": 500, "y": 100 },
+        "scale": { "x": 0.8, "y": 0.8 }
+      },
+      { 
+        "id": "load2", 
+        "type": "load", 
+        "object_id": "obj-0004-load2",
+        "icon": "icons/load.svg",
+        "position": { "x": 500, "y": 200 },
+        "scale": { "x": 0.8, "y": 0.8 }
+      },
+      { 
+        "id": "load3", 
+        "type": "load", 
+        "object_id": "obj-0005-load3",
+        "icon": "icons/load.svg",
+        "position": { "x": 500, "y": 400 },
+        "scale": { "x": 0.8, "y": 0.8 }
+      },
+      { 
+        "id": "load4", 
+        "type": "load", 
+        "object_id": "obj-0006-load4",
+        "icon": "icons/load.svg",
+        "position": { "x": 500, "y": 500 },
+        "scale": { "x": 0.8, "y": 0.8 }
+      }
+    ],
+    "connections": [
+      { 
+        "end1": "source", 
+        "end2": "dist1", 
+        "type": "busbar", 
+        "object_id": "obj-1001-busbar",
+        "label": "Main Busbar",
+        "direction": "unidirectional",
+        "flow": "end1_to_end2",
+        "style": {
+          "line_type": "manhattan",
+          "color": "#555555",
+          "width": 4
+        },
+        "terminal_offsets": {
+          "end1": { "x": 1.0, "y": 0.5 },
+          "end2": { "x": 0.0, "y": 0.5 }
+        },
+        "routing_points": []
+      },
+      { 
+        "end1": "dist1", 
+        "end2": "load1", 
+        "type": "cable", 
+        "object_id": "obj-1002-cable1",
+        "label": "Cable 1",
+        "direction": "unidirectional",
+        "flow": "end1_to_end2",
+        "style": {
+          "line_type": "polyline",
+          "color": "#007BFF",
+          "width": 2
+        },
+        "terminal_offsets": {
+          "end1": { "x": 1.0, "y": 0.2 },
+          "end2": { "x": 0.0, "y": 0.5 }
+        },
+        "routing_points": [
+          { "x": 0.5, "y": 0.4 },  
+          { "x": 0.75, "y": 0.6 }  
+        ]
+      },
+      { 
+        "end1": "dist1", 
+        "end2": "load2", 
+        "type": "cable", 
+        "object_id": "obj-1003-cable2",
+        "label": "Cable 2",
+        "direction": "unidirectional",
+        "flow": "end1_to_end2",
+        "style": {
+          "line_type": "polyline",
+          "color": "#007BFF",
+          "width": 2
+        },
+        "terminal_offsets": {
+          "end1": { "x": 1.0, "y": 0.4 },
+          "end2": { "x": 0.0, "y": 0.5 }
+        },
+        "routing_points": [
+          { "x": 0.5, "y": 0.5 },
+          { "x": 0.75, "y": 0.7 }
+        ]
+      },
+      { 
+        "end1": "dist1", 
+        "end2": "load3", 
+        "type": "cable", 
+        "object_id": "obj-1004-cable3",
+        "label": "Cable 3",
+        "direction": "unidirectional",
+        "flow": "end1_to_end2",
+        "style": {
+          "line_type": "polyline",
+          "color": "#007BFF",
+          "width": 2
+        },
+        "terminal_offsets": {
+          "end1": { "x": 1.0, "y": 0.6 },
+          "end2": { "x": 0.0, "y": 0.5 }
+        },
+        "routing_points": [
+          { "x": 0.5, "y": 0.6 },
+          { "x": 0.75, "y": 0.9 }
+        ]
+      },
+      { 
+        "end1": "dist1", 
+        "end2": "load4", 
+        "type": "cable", 
+        "object_id": "obj-1005-cable4",
+        "label": "Cable 4",
+        "direction": "bidirectional",
+        "style": {
+          "line_type": "polyline",
+          "color": "#007BFF",
+          "width": 2
+        },
+        "terminal_offsets": {
+          "end1": { "x": 1.0, "y": 0.8 },
+          "end2": { "x": 0.0, "y": 0.5 }
+        },
+        "routing_points": [
+          { "x": 0.5, "y": 0.8 },
+          { "x": 0.75, "y": 1.0 }
+        ]
+      }
+    ]
+  }
+  

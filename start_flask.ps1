@@ -16,11 +16,19 @@ if (-Not (Test-Path -Path "venv")) {
 Write-Host "Activating virtual environment..."
 . .\venv\Scripts\Activate.ps1
 
-# Install the required packages (if not already installed)
-Write-Host "Installing dependencies..."
+# Install the required packages from requirements.txt
+Write-Host "Installing dependencies from requirements.txt..."
 pip install --upgrade pip
-pip install flask
+
+if (Test-Path -Path "requirements.txt") {
+    pip install -r requirements.txt
+} else {
+    Write-Host "WARNING: requirements.txt not found. Installing Flask only..."
+    pip install flask
+}
 
 # Launch the Flask app in debug mode
 Write-Host "Running Flask app in debug mode..."
 flask --app app --debug run
+
+# deactivate to stop
