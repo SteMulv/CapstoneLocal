@@ -1,5 +1,5 @@
-from flask import Flask, request, escape #escape safely encodes user inputs to prevent injection, but not best for URLs
-from flask import jsonify
+from flask import Flask, request, jsonify 
+from markupsafe import escape #escape safely encodes user inputs to prevent injection, but not best for URLs 
 from urllib.parse import quote #this is an alternative to escape as it is designed for parameters
 import requests #import python requests library
 
